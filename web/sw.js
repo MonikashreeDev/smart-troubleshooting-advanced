@@ -1,5 +1,5 @@
 // App-shell cache so the installed PWA opens offline. API calls always go to the network.
-const CACHE = 'galaxy-care-v1';
+const CACHE = 'galaxy-care-v2';
 const SHELL = ['/', '/web/styles.css', '/web/app.js', '/web/icon.svg', '/web/manifest.webmanifest'];
 self.addEventListener('install', e => e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting())));
 self.addEventListener('activate', e => e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())));
