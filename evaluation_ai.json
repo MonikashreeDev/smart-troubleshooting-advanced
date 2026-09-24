@@ -1,0 +1,1223 @@
+{
+  "generated_at": "2026-09-23T13:34:52+00:00",
+  "dataset": {
+    "file": "data/eval_messy.json",
+    "cases": 33,
+    "note": "Synthetic evaluation set written for this prototype (not official Samsung data). Messy, paraphrased and code-mixed complaints mapped to the synthetic demo catalog. expected_catalog_id null means the correct behaviour is safe abstention."
+  },
+  "cases": 33,
+  "configs": {
+    "rules_only": {
+      "accuracy": 0.758,
+      "correct": 25,
+      "total": 33,
+      "wrong_plans": 0,
+      "by_category": {
+        "clean_english": {
+          "correct": 5,
+          "total": 5,
+          "accuracy": 1.0
+        },
+        "english_paraphrase": {
+          "correct": 4,
+          "total": 8,
+          "accuracy": 0.5
+        },
+        "hinglish": {
+          "correct": 5,
+          "total": 5,
+          "accuracy": 1.0
+        },
+        "tanglish": {
+          "correct": 5,
+          "total": 6,
+          "accuracy": 0.833
+        },
+        "typos": {
+          "correct": 1,
+          "total": 4,
+          "accuracy": 0.25
+        },
+        "out_of_scope": {
+          "correct": 5,
+          "total": 5,
+          "accuracy": 1.0
+        }
+      },
+      "cold_latency_ms_p50": 0.6,
+      "rows": [
+        {
+          "category": "clean_english",
+          "query": "My phone became slow after an update",
+          "expected": "dl-device-care",
+          "got": "dl-device-care",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_disabled",
+          "latency_ms": 0.9
+        },
+        {
+          "category": "clean_english",
+          "query": "Swipe gestures go the wrong way after installing an app",
+          "expected": "dl-navigation",
+          "got": "dl-navigation",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_disabled",
+          "latency_ms": 0.9
+        },
+        {
+          "category": "clean_english",
+          "query": "The battery dies quickly",
+          "expected": "dl-battery",
+          "got": "dl-battery",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_disabled",
+          "latency_ms": 0.6
+        },
+        {
+          "category": "clean_english",
+          "query": "My camera pictures are blurry",
+          "expected": "dl-camera-reset",
+          "got": "dl-camera-reset",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_disabled",
+          "latency_ms": 0.6
+        },
+        {
+          "category": "clean_english",
+          "query": "The screen keeps flickering",
+          "expected": "dl-motion",
+          "got": "dl-motion",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_disabled",
+          "latency_ms": 0.6
+        },
+        {
+          "category": "english_paraphrase",
+          "query": "Ever since the new software came in, everything takes forever to open",
+          "expected": "dl-device-care",
+          "got": "dl-device-care",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_disabled",
+          "latency_ms": 0.8
+        },
+        {
+          "category": "english_paraphrase",
+          "query": "My Galaxy keeps freezing and hanging all the time",
+          "expected": "dl-device-care",
+          "got": null,
+          "correct": false,
+          "wrong_plan": false,
+          "fallback": "no_match",
+          "ai_reason": "ai_disabled",
+          "latency_ms": 0.2
+        },
+        {
+          "category": "english_paraphrase",
+          "query": "Charge doesn't even last till lunch anymore",
+          "expected": "dl-battery",
+          "got": "dl-battery",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_disabled",
+          "latency_ms": 0.6
+        },
+        {
+          "category": "english_paraphrase",
+          "query": "I go from 100 to 20 percent in two hours",
+          "expected": "dl-battery",
+          "got": null,
+          "correct": false,
+          "wrong_plan": false,
+          "fallback": "no_match",
+          "ai_reason": "ai_disabled",
+          "latency_ms": 0.2
+        },
+        {
+          "category": "english_paraphrase",
+          "query": "Pictures come out fuzzy and out of focus",
+          "expected": "dl-camera-reset",
+          "got": null,
+          "correct": false,
+          "wrong_plan": false,
+          "fallback": "no_match",
+          "ai_reason": "ai_disabled",
+          "latency_ms": 0.1
+        },
+        {
+          "category": "english_paraphrase",
+          "query": "The display keeps blinking on and off",
+          "expected": "dl-motion",
+          "got": "dl-motion",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_disabled",
+          "latency_ms": 0.6
+        },
+        {
+          "category": "english_paraphrase",
+          "query": "Going back with a gesture opens the wrong thing since I added a new launcher",
+          "expected": "dl-navigation",
+          "got": null,
+          "correct": false,
+          "wrong_plan": false,
+          "fallback": "no_match",
+          "ai_reason": "ai_disabled",
+          "latency_ms": 0.2
+        },
+        {
+          "category": "english_paraphrase",
+          "query": "Apps stutter and the whole phone is sluggish",
+          "expected": "dl-device-care",
+          "got": "dl-device-care",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_disabled",
+          "latency_ms": 0.6
+        },
+        {
+          "category": "hinglish",
+          "query": "update ke baad phone bahut atak raha hai",
+          "expected": "dl-device-care",
+          "got": "dl-device-care",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_disabled",
+          "latency_ms": 0.7
+        },
+        {
+          "category": "hinglish",
+          "query": "battery jaldi khatam ho jaati hai yaar",
+          "expected": "dl-battery",
+          "got": "dl-battery",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_disabled",
+          "latency_ms": 0.7
+        },
+        {
+          "category": "hinglish",
+          "query": "camera se photo saaf nahi aa rahi, sab dhundla hai",
+          "expected": "dl-camera-reset",
+          "got": "dl-camera-reset",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_disabled",
+          "latency_ms": 0.6
+        },
+        {
+          "category": "hinglish",
+          "query": "screen baar baar timtima rahi hai",
+          "expected": "dl-motion",
+          "got": "dl-motion",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_disabled",
+          "latency_ms": 0.7
+        },
+        {
+          "category": "hinglish",
+          "query": "naya app daalne ke baad swipe karne pe ulta chal raha hai",
+          "expected": "dl-navigation",
+          "got": "dl-navigation",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_disabled",
+          "latency_ms": 0.7
+        },
+        {
+          "category": "tanglish",
+          "query": "phone romba slow aagudhu after update",
+          "expected": "dl-device-care",
+          "got": "dl-device-care",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_disabled",
+          "latency_ms": 0.6
+        },
+        {
+          "category": "tanglish",
+          "query": "mobile romba hang aagudhu, app open panna time edukudhu",
+          "expected": "dl-device-care",
+          "got": null,
+          "correct": false,
+          "wrong_plan": false,
+          "fallback": "no_match",
+          "ai_reason": "ai_disabled",
+          "latency_ms": 0.2
+        },
+        {
+          "category": "tanglish",
+          "query": "charge seekiram kammi aagiduthu, evening varaikum nikkala",
+          "expected": "dl-battery",
+          "got": "dl-battery",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_disabled",
+          "latency_ms": 0.7
+        },
+        {
+          "category": "tanglish",
+          "query": "photo edutha blur ah varudhu, clear ah illa",
+          "expected": "dl-camera-reset",
+          "got": "dl-camera-reset",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_disabled",
+          "latency_ms": 0.6
+        },
+        {
+          "category": "tanglish",
+          "query": "screen adikkadi flicker aagudhu",
+          "expected": "dl-motion",
+          "got": "dl-motion",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_disabled",
+          "latency_ms": 0.6
+        },
+        {
+          "category": "tanglish",
+          "query": "pudhu app install panna apram swipe panna thappa poguthu",
+          "expected": "dl-navigation",
+          "got": "dl-navigation",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_disabled",
+          "latency_ms": 0.7
+        },
+        {
+          "category": "typos",
+          "query": "phn is sooo laggy aftr updte",
+          "expected": "dl-device-care",
+          "got": "dl-device-care",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_disabled",
+          "latency_ms": 0.6
+        },
+        {
+          "category": "typos",
+          "query": "batery draning fast",
+          "expected": "dl-battery",
+          "got": null,
+          "correct": false,
+          "wrong_plan": false,
+          "fallback": "no_match",
+          "ai_reason": "ai_disabled",
+          "latency_ms": 0.1
+        },
+        {
+          "category": "typos",
+          "query": "camra pics blury",
+          "expected": "dl-camera-reset",
+          "got": null,
+          "correct": false,
+          "wrong_plan": false,
+          "fallback": "no_match",
+          "ai_reason": "ai_disabled",
+          "latency_ms": 0.1
+        },
+        {
+          "category": "typos",
+          "query": "scren flikering",
+          "expected": "dl-motion",
+          "got": null,
+          "correct": false,
+          "wrong_plan": false,
+          "fallback": "no_match",
+          "ai_reason": "ai_disabled",
+          "latency_ms": 0.2
+        },
+        {
+          "category": "out_of_scope",
+          "query": "My toaster is singing",
+          "expected": null,
+          "got": null,
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": "no_match",
+          "ai_reason": "ai_disabled",
+          "latency_ms": 0.2
+        },
+        {
+          "category": "out_of_scope",
+          "query": "How do I cook biryani",
+          "expected": null,
+          "got": null,
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": "no_match",
+          "ai_reason": "ai_disabled",
+          "latency_ms": 0.1
+        },
+        {
+          "category": "out_of_scope",
+          "query": "wifi connect aagala",
+          "expected": null,
+          "got": null,
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": "no_match",
+          "ai_reason": "ai_disabled",
+          "latency_ms": 0.1
+        },
+        {
+          "category": "out_of_scope",
+          "query": "my laptop keyboard is not typing",
+          "expected": null,
+          "got": null,
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": "no_match",
+          "ai_reason": "ai_disabled",
+          "latency_ms": 0.1
+        },
+        {
+          "category": "out_of_scope",
+          "query": "call drop aagudhu network illa",
+          "expected": null,
+          "got": null,
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": "no_match",
+          "ai_reason": "ai_disabled",
+          "latency_ms": 0.1
+        }
+      ]
+    },
+    "plus_embeddings": {
+      "accuracy": 0.879,
+      "correct": 29,
+      "total": 33,
+      "wrong_plans": 0,
+      "by_category": {
+        "clean_english": {
+          "correct": 5,
+          "total": 5,
+          "accuracy": 1.0
+        },
+        "english_paraphrase": {
+          "correct": 7,
+          "total": 8,
+          "accuracy": 0.875
+        },
+        "hinglish": {
+          "correct": 5,
+          "total": 5,
+          "accuracy": 1.0
+        },
+        "tanglish": {
+          "correct": 5,
+          "total": 6,
+          "accuracy": 0.833
+        },
+        "typos": {
+          "correct": 2,
+          "total": 4,
+          "accuracy": 0.5
+        },
+        "out_of_scope": {
+          "correct": 5,
+          "total": 5,
+          "accuracy": 1.0
+        }
+      },
+      "cold_latency_ms_p50": 554.0,
+      "rows": [
+        {
+          "category": "clean_english",
+          "query": "My phone became slow after an update",
+          "expected": "dl-device-care",
+          "got": "dl-device-care",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_unavailable_fallback_to_rules",
+          "latency_ms": 1312.5
+        },
+        {
+          "category": "clean_english",
+          "query": "Swipe gestures go the wrong way after installing an app",
+          "expected": "dl-navigation",
+          "got": "dl-navigation",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_unavailable_fallback_to_rules",
+          "latency_ms": 1063.2
+        },
+        {
+          "category": "clean_english",
+          "query": "The battery dies quickly",
+          "expected": "dl-battery",
+          "got": "dl-battery",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_unavailable_fallback_to_rules",
+          "latency_ms": 565.9
+        },
+        {
+          "category": "clean_english",
+          "query": "My camera pictures are blurry",
+          "expected": "dl-camera-reset",
+          "got": "dl-camera-reset",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_unavailable_fallback_to_rules",
+          "latency_ms": 588.9
+        },
+        {
+          "category": "clean_english",
+          "query": "The screen keeps flickering",
+          "expected": "dl-motion",
+          "got": "dl-motion",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_unavailable_fallback_to_rules",
+          "latency_ms": 569.1
+        },
+        {
+          "category": "english_paraphrase",
+          "query": "Ever since the new software came in, everything takes forever to open",
+          "expected": "dl-device-care",
+          "got": "dl-device-care",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_unavailable_fallback_to_rules",
+          "latency_ms": 622.1
+        },
+        {
+          "category": "english_paraphrase",
+          "query": "My Galaxy keeps freezing and hanging all the time",
+          "expected": "dl-device-care",
+          "got": "dl-device-care",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_unavailable_fallback_to_rules+embedding_domain",
+          "latency_ms": 513.4
+        },
+        {
+          "category": "english_paraphrase",
+          "query": "Charge doesn't even last till lunch anymore",
+          "expected": "dl-battery",
+          "got": "dl-battery",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_unavailable_fallback_to_rules",
+          "latency_ms": 2102.4
+        },
+        {
+          "category": "english_paraphrase",
+          "query": "I go from 100 to 20 percent in two hours",
+          "expected": "dl-battery",
+          "got": null,
+          "correct": false,
+          "wrong_plan": false,
+          "fallback": "no_match",
+          "ai_reason": "ai_unavailable_fallback_to_rules",
+          "latency_ms": 172.2
+        },
+        {
+          "category": "english_paraphrase",
+          "query": "Pictures come out fuzzy and out of focus",
+          "expected": "dl-camera-reset",
+          "got": "dl-camera-reset",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_unavailable_fallback_to_rules+embedding_domain",
+          "latency_ms": 518.9
+        },
+        {
+          "category": "english_paraphrase",
+          "query": "The display keeps blinking on and off",
+          "expected": "dl-motion",
+          "got": "dl-motion",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_unavailable_fallback_to_rules",
+          "latency_ms": 1123.3
+        },
+        {
+          "category": "english_paraphrase",
+          "query": "Going back with a gesture opens the wrong thing since I added a new launcher",
+          "expected": "dl-navigation",
+          "got": "dl-navigation",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_unavailable_fallback_to_rules+embedding_domain",
+          "latency_ms": 543.9
+        },
+        {
+          "category": "english_paraphrase",
+          "query": "Apps stutter and the whole phone is sluggish",
+          "expected": "dl-device-care",
+          "got": "dl-device-care",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_unavailable_fallback_to_rules",
+          "latency_ms": 551.6
+        },
+        {
+          "category": "hinglish",
+          "query": "update ke baad phone bahut atak raha hai",
+          "expected": "dl-device-care",
+          "got": "dl-device-care",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_unavailable_fallback_to_rules",
+          "latency_ms": 629.7
+        },
+        {
+          "category": "hinglish",
+          "query": "battery jaldi khatam ho jaati hai yaar",
+          "expected": "dl-battery",
+          "got": "dl-battery",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_unavailable_fallback_to_rules",
+          "latency_ms": 606.6
+        },
+        {
+          "category": "hinglish",
+          "query": "camera se photo saaf nahi aa rahi, sab dhundla hai",
+          "expected": "dl-camera-reset",
+          "got": "dl-camera-reset",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_unavailable_fallback_to_rules",
+          "latency_ms": 423.9
+        },
+        {
+          "category": "hinglish",
+          "query": "screen baar baar timtima rahi hai",
+          "expected": "dl-motion",
+          "got": "dl-motion",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_unavailable_fallback_to_rules",
+          "latency_ms": 535.5
+        },
+        {
+          "category": "hinglish",
+          "query": "naya app daalne ke baad swipe karne pe ulta chal raha hai",
+          "expected": "dl-navigation",
+          "got": "dl-navigation",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_unavailable_fallback_to_rules",
+          "latency_ms": 602.6
+        },
+        {
+          "category": "tanglish",
+          "query": "phone romba slow aagudhu after update",
+          "expected": "dl-device-care",
+          "got": "dl-device-care",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_unavailable_fallback_to_rules",
+          "latency_ms": 592.7
+        },
+        {
+          "category": "tanglish",
+          "query": "mobile romba hang aagudhu, app open panna time edukudhu",
+          "expected": "dl-device-care",
+          "got": null,
+          "correct": false,
+          "wrong_plan": false,
+          "fallback": "no_match",
+          "ai_reason": "ai_unavailable_fallback_to_rules",
+          "latency_ms": 211.8
+        },
+        {
+          "category": "tanglish",
+          "query": "charge seekiram kammi aagiduthu, evening varaikum nikkala",
+          "expected": "dl-battery",
+          "got": "dl-battery",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_unavailable_fallback_to_rules",
+          "latency_ms": 593.1
+        },
+        {
+          "category": "tanglish",
+          "query": "photo edutha blur ah varudhu, clear ah illa",
+          "expected": "dl-camera-reset",
+          "got": "dl-camera-reset",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_unavailable_fallback_to_rules",
+          "latency_ms": 554.0
+        },
+        {
+          "category": "tanglish",
+          "query": "screen adikkadi flicker aagudhu",
+          "expected": "dl-motion",
+          "got": "dl-motion",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_unavailable_fallback_to_rules",
+          "latency_ms": 2578.2
+        },
+        {
+          "category": "tanglish",
+          "query": "pudhu app install panna apram swipe panna thappa poguthu",
+          "expected": "dl-navigation",
+          "got": "dl-navigation",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_unavailable_fallback_to_rules",
+          "latency_ms": 469.7
+        },
+        {
+          "category": "typos",
+          "query": "phn is sooo laggy aftr updte",
+          "expected": "dl-device-care",
+          "got": "dl-device-care",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_unavailable_fallback_to_rules",
+          "latency_ms": 593.9
+        },
+        {
+          "category": "typos",
+          "query": "batery draning fast",
+          "expected": "dl-battery",
+          "got": null,
+          "correct": false,
+          "wrong_plan": false,
+          "fallback": "no_match",
+          "ai_reason": "ai_unavailable_fallback_to_rules",
+          "latency_ms": 195.6
+        },
+        {
+          "category": "typos",
+          "query": "camra pics blury",
+          "expected": "dl-camera-reset",
+          "got": "dl-camera-reset",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_unavailable_fallback_to_rules+embedding_domain",
+          "latency_ms": 645.0
+        },
+        {
+          "category": "typos",
+          "query": "scren flikering",
+          "expected": "dl-motion",
+          "got": null,
+          "correct": false,
+          "wrong_plan": false,
+          "fallback": "no_match",
+          "ai_reason": "ai_unavailable_fallback_to_rules",
+          "latency_ms": 249.5
+        },
+        {
+          "category": "out_of_scope",
+          "query": "My toaster is singing",
+          "expected": null,
+          "got": null,
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": "no_match",
+          "ai_reason": "ai_unavailable_fallback_to_rules",
+          "latency_ms": 211.5
+        },
+        {
+          "category": "out_of_scope",
+          "query": "How do I cook biryani",
+          "expected": null,
+          "got": null,
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": "no_match",
+          "ai_reason": "ai_unavailable_fallback_to_rules",
+          "latency_ms": 212.8
+        },
+        {
+          "category": "out_of_scope",
+          "query": "wifi connect aagala",
+          "expected": null,
+          "got": null,
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": "no_match",
+          "ai_reason": "ai_unavailable_fallback_to_rules",
+          "latency_ms": 252.6
+        },
+        {
+          "category": "out_of_scope",
+          "query": "my laptop keyboard is not typing",
+          "expected": null,
+          "got": null,
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": "no_match",
+          "ai_reason": "ai_unavailable_fallback_to_rules",
+          "latency_ms": 200.6
+        },
+        {
+          "category": "out_of_scope",
+          "query": "call drop aagudhu network illa",
+          "expected": null,
+          "got": null,
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": "no_match",
+          "ai_reason": "ai_unavailable_fallback_to_rules",
+          "latency_ms": 156.2
+        }
+      ]
+    },
+    "full_ai": {
+      "accuracy": 1.0,
+      "correct": 33,
+      "total": 33,
+      "wrong_plans": 0,
+      "by_category": {
+        "clean_english": {
+          "correct": 5,
+          "total": 5,
+          "accuracy": 1.0
+        },
+        "english_paraphrase": {
+          "correct": 8,
+          "total": 8,
+          "accuracy": 1.0
+        },
+        "hinglish": {
+          "correct": 5,
+          "total": 5,
+          "accuracy": 1.0
+        },
+        "tanglish": {
+          "correct": 6,
+          "total": 6,
+          "accuracy": 1.0
+        },
+        "typos": {
+          "correct": 4,
+          "total": 4,
+          "accuracy": 1.0
+        },
+        "out_of_scope": {
+          "correct": 5,
+          "total": 5,
+          "accuracy": 1.0
+        }
+      },
+      "cold_latency_ms_p50": 1274.2,
+      "rows": [
+        {
+          "category": "clean_english",
+          "query": "My phone became slow after an update",
+          "expected": "dl-device-care",
+          "got": "dl-device-care",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_understood",
+          "latency_ms": 1298.5
+        },
+        {
+          "category": "clean_english",
+          "query": "Swipe gestures go the wrong way after installing an app",
+          "expected": "dl-navigation",
+          "got": "dl-navigation",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_understood",
+          "latency_ms": 1658.0
+        },
+        {
+          "category": "clean_english",
+          "query": "The battery dies quickly",
+          "expected": "dl-battery",
+          "got": "dl-battery",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_understood",
+          "latency_ms": 2261.7
+        },
+        {
+          "category": "clean_english",
+          "query": "My camera pictures are blurry",
+          "expected": "dl-camera-reset",
+          "got": "dl-camera-reset",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_understood",
+          "latency_ms": 1633.5
+        },
+        {
+          "category": "clean_english",
+          "query": "The screen keeps flickering",
+          "expected": "dl-motion",
+          "got": "dl-motion",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_understood",
+          "latency_ms": 1395.8
+        },
+        {
+          "category": "english_paraphrase",
+          "query": "Ever since the new software came in, everything takes forever to open",
+          "expected": "dl-device-care",
+          "got": "dl-device-care",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_understood",
+          "latency_ms": 877.3
+        },
+        {
+          "category": "english_paraphrase",
+          "query": "My Galaxy keeps freezing and hanging all the time",
+          "expected": "dl-device-care",
+          "got": "dl-device-care",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_understood",
+          "latency_ms": 10869.8
+        },
+        {
+          "category": "english_paraphrase",
+          "query": "Charge doesn't even last till lunch anymore",
+          "expected": "dl-battery",
+          "got": "dl-battery",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_understood",
+          "latency_ms": 10824.2
+        },
+        {
+          "category": "english_paraphrase",
+          "query": "I go from 100 to 20 percent in two hours",
+          "expected": "dl-battery",
+          "got": "dl-battery",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_understood",
+          "latency_ms": 1856.0
+        },
+        {
+          "category": "english_paraphrase",
+          "query": "Pictures come out fuzzy and out of focus",
+          "expected": "dl-camera-reset",
+          "got": "dl-camera-reset",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_understood",
+          "latency_ms": 5498.0
+        },
+        {
+          "category": "english_paraphrase",
+          "query": "The display keeps blinking on and off",
+          "expected": "dl-motion",
+          "got": "dl-motion",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_understood",
+          "latency_ms": 833.4
+        },
+        {
+          "category": "english_paraphrase",
+          "query": "Going back with a gesture opens the wrong thing since I added a new launcher",
+          "expected": "dl-navigation",
+          "got": "dl-navigation",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_understood",
+          "latency_ms": 1316.9
+        },
+        {
+          "category": "english_paraphrase",
+          "query": "Apps stutter and the whole phone is sluggish",
+          "expected": "dl-device-care",
+          "got": "dl-device-care",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_understood",
+          "latency_ms": 940.5
+        },
+        {
+          "category": "hinglish",
+          "query": "update ke baad phone bahut atak raha hai",
+          "expected": "dl-device-care",
+          "got": "dl-device-care",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_understood",
+          "latency_ms": 1334.3
+        },
+        {
+          "category": "hinglish",
+          "query": "battery jaldi khatam ho jaati hai yaar",
+          "expected": "dl-battery",
+          "got": "dl-battery",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_understood",
+          "latency_ms": 1014.2
+        },
+        {
+          "category": "hinglish",
+          "query": "camera se photo saaf nahi aa rahi, sab dhundla hai",
+          "expected": "dl-camera-reset",
+          "got": "dl-camera-reset",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_understood",
+          "latency_ms": 1583.2
+        },
+        {
+          "category": "hinglish",
+          "query": "screen baar baar timtima rahi hai",
+          "expected": "dl-motion",
+          "got": "dl-motion",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_understood",
+          "latency_ms": 6655.2
+        },
+        {
+          "category": "hinglish",
+          "query": "naya app daalne ke baad swipe karne pe ulta chal raha hai",
+          "expected": "dl-navigation",
+          "got": "dl-navigation",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_understood",
+          "latency_ms": 3108.5
+        },
+        {
+          "category": "tanglish",
+          "query": "phone romba slow aagudhu after update",
+          "expected": "dl-device-care",
+          "got": "dl-device-care",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_understood",
+          "latency_ms": 1126.2
+        },
+        {
+          "category": "tanglish",
+          "query": "mobile romba hang aagudhu, app open panna time edukudhu",
+          "expected": "dl-device-care",
+          "got": "dl-device-care",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_understood",
+          "latency_ms": 1154.8
+        },
+        {
+          "category": "tanglish",
+          "query": "charge seekiram kammi aagiduthu, evening varaikum nikkala",
+          "expected": "dl-battery",
+          "got": "dl-battery",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_understood",
+          "latency_ms": 1266.7
+        },
+        {
+          "category": "tanglish",
+          "query": "photo edutha blur ah varudhu, clear ah illa",
+          "expected": "dl-camera-reset",
+          "got": "dl-camera-reset",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_understood",
+          "latency_ms": 1274.2
+        },
+        {
+          "category": "tanglish",
+          "query": "screen adikkadi flicker aagudhu",
+          "expected": "dl-motion",
+          "got": "dl-motion",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_understood",
+          "latency_ms": 937.7
+        },
+        {
+          "category": "tanglish",
+          "query": "pudhu app install panna apram swipe panna thappa poguthu",
+          "expected": "dl-navigation",
+          "got": "dl-navigation",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_understood",
+          "latency_ms": 913.0
+        },
+        {
+          "category": "typos",
+          "query": "phn is sooo laggy aftr updte",
+          "expected": "dl-device-care",
+          "got": "dl-device-care",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_understood",
+          "latency_ms": 996.1
+        },
+        {
+          "category": "typos",
+          "query": "batery draning fast",
+          "expected": "dl-battery",
+          "got": "dl-battery",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_understood",
+          "latency_ms": 760.0
+        },
+        {
+          "category": "typos",
+          "query": "camra pics blury",
+          "expected": "dl-camera-reset",
+          "got": "dl-camera-reset",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_understood",
+          "latency_ms": 1000.9
+        },
+        {
+          "category": "typos",
+          "query": "scren flikering",
+          "expected": "dl-motion",
+          "got": "dl-motion",
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": null,
+          "ai_reason": "ai_understood",
+          "latency_ms": 923.2
+        },
+        {
+          "category": "out_of_scope",
+          "query": "My toaster is singing",
+          "expected": null,
+          "got": null,
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": "no_match",
+          "ai_reason": "ai_out_of_scope",
+          "latency_ms": 1054.4
+        },
+        {
+          "category": "out_of_scope",
+          "query": "How do I cook biryani",
+          "expected": null,
+          "got": null,
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": "no_match",
+          "ai_reason": "ai_out_of_scope",
+          "latency_ms": 1096.4
+        },
+        {
+          "category": "out_of_scope",
+          "query": "wifi connect aagala",
+          "expected": null,
+          "got": null,
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": "no_match",
+          "ai_reason": "ai_out_of_scope",
+          "latency_ms": 3689.0
+        },
+        {
+          "category": "out_of_scope",
+          "query": "my laptop keyboard is not typing",
+          "expected": null,
+          "got": null,
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": "no_match",
+          "ai_reason": "ai_out_of_scope",
+          "latency_ms": 3400.7
+        },
+        {
+          "category": "out_of_scope",
+          "query": "call drop aagudhu network illa",
+          "expected": null,
+          "got": null,
+          "correct": true,
+          "wrong_plan": false,
+          "fallback": "no_match",
+          "ai_reason": "ai_out_of_scope",
+          "latency_ms": 1120.8
+        }
+      ]
+    }
+  }
+}

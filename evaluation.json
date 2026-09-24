@@ -1,0 +1,70 @@
+{
+  "asset_mode": "synthetic_demo",
+  "cases": [
+    {
+      "query": "My phone became slow after an update",
+      "domain_ok": true,
+      "deeplink_ok": true,
+      "latency_ms": 0.67,
+      "fallback": null
+    },
+    {
+      "query": "Swipe gestures go the wrong way after installing an app",
+      "domain_ok": true,
+      "deeplink_ok": true,
+      "latency_ms": 0.64,
+      "fallback": null
+    },
+    {
+      "query": "The battery dies quickly",
+      "domain_ok": true,
+      "deeplink_ok": true,
+      "latency_ms": 0.6,
+      "fallback": null
+    },
+    {
+      "query": "My camera pictures are blurry",
+      "domain_ok": true,
+      "deeplink_ok": true,
+      "latency_ms": 0.59,
+      "fallback": null
+    },
+    {
+      "query": "The screen keeps flickering",
+      "domain_ok": true,
+      "deeplink_ok": true,
+      "latency_ms": 0.57,
+      "fallback": null
+    }
+  ],
+  "domain_accuracy": 1.0,
+  "deeplink_accuracy": 1.0,
+  "metrics": {
+    "requests": 5,
+    "cache_hits": {
+      "exact": 0,
+      "semantic": 0
+    },
+    "cache_hit_rate": 0.0,
+    "abstentions": 0,
+    "latency_ms": {
+      "p50": 0.43,
+      "p95": 0.47
+    },
+    "schema_contract": "Appendix A core + Appendix B envelope",
+    "catalog_integrity": 1.0,
+    "url_leaks": 0,
+    "assets": {
+      "mode": "synthetic_demo",
+      "official_present": [],
+      "official_missing": [
+        "queries.json",
+        "siis_responses.json",
+        "deeplinks.json",
+        "samples/",
+        "schema.py"
+      ],
+      "pipeline_version": "1a9d700f9d10"
+    }
+  }
+}
