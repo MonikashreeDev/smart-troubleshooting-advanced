@@ -61,3 +61,12 @@ table{width:100%;border-collapse:collapse;font-size:13px}td,th{text-align:left;p
 nav.bottom{position:fixed;left:0;right:0;bottom:0;display:flex;justify-content:center;gap:4px;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(16px);padding:8px 10px calc(8px + env(safe-area-inset-bottom))}
 nav.bottom button{flex:0 1 200px;border:0;background:none;color:var(--sub);font:inherit;font-size:12px;padding:6px;border-radius:18px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px}
 nav.bottom button span{font-size:18px}nav.bottom button.on{color:var(--blueInk);font-weight:600}
+
+/* Service-centre handoff: send the report to Samsung */
+.handoff{margin-top:12px;border-top:1px solid var(--line);padding-top:12px}
+.handoff h4{margin:0 0 10px;font-size:15px;font-weight:600}
+.handoffBtns{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.hsBtn{display:block;text-align:center;text-decoration:none;border:0;border-radius:16px;padding:11px 8px;font:inherit;font-size:13.5px;cursor:pointer;background:var(--chip);color:var(--blueInk)}
+.hsBtn.primary{background:var(--blue);color:#fff}
+.handoffNote{margin-top:10px}
+@media (max-width:420px){.handoffBtns{grid-template-columns:1fr}}
