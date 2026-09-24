@@ -1,0 +1,13 @@
+{
+  "note": "Synthetic masked deeplinks for the follow-up and predictive fixes (not official Samsung catalog entries).",
+  "entries": [
+    {"id": "dl-restart", "deeplink": "bixby://masked/act/restart-device", "description": "Open the power menu to restart the device", "message": "", "classes": {}, "originalType": "act"},
+    {"id": "dl-safe-mode", "deeplink": "bixby://masked/act/safe-mode", "description": "Open the power menu with Safe mode option", "message": "", "classes": {}, "originalType": "act"},
+    {"id": "dl-power-saving", "deeplink": "bixby://masked/act/power-saving", "description": "Open Power saving under Battery", "message": "", "classes": {}, "originalType": "act"},
+    {"id": "dl-sleeping-apps", "deeplink": "bixby://masked/act/sleeping-apps", "description": "Open Background usage limits under Battery", "message": "", "classes": {}, "originalType": "act"},
+    {"id": "dl-adaptive-brightness", "deeplink": "bixby://masked/act/adaptive-brightness", "description": "Open Adaptive brightness under Display", "message": "", "classes": {}, "originalType": "act"},
+    {"id": "dl-app-storage", "deeplink": "bixby://masked/act/app-storage-camera", "description": "Open Storage for the Camera app under Apps", "message": "", "classes": {}, "originalType": "act"},
+    {"id": "dl-reset-settings", "deeplink": "bixby://masked/act/reset-all-settings", "description": "Open Reset under General management", "message": "", "classes": {}, "originalType": "act"},
+    {"id": "dl-storage", "deeplink": "bixby://masked/act/storage", "description": "Open Storage under Battery and device care", "message": "", "classes": {}, "originalType": "act"}
+  ]
+}

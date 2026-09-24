@@ -1,0 +1,7 @@
+[
+ {"query":"My phone became slow after an update","expected_domain":"Performance","expected_catalog_id":"dl-device-care"},
+ {"query":"Swipe gestures go the wrong way after installing an app","expected_domain":"Display","expected_catalog_id":"dl-navigation"},
+ {"query":"The battery dies quickly","expected_domain":"Battery","expected_catalog_id":"dl-battery"},
+ {"query":"My camera pictures are blurry","expected_domain":"Camera","expected_catalog_id":"dl-camera-reset"},
+ {"query":"The screen keeps flickering","expected_domain":"Display","expected_catalog_id":"dl-motion"}
+]

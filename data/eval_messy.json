@@ -1,0 +1,43 @@
+{
+  "note": "Synthetic evaluation set written for this prototype (not official Samsung data). Messy, paraphrased and code-mixed complaints mapped to the synthetic demo catalog. expected_catalog_id null means the correct behaviour is safe abstention.",
+  "cases": [
+    {"category": "clean_english", "query": "My phone became slow after an update", "expected_catalog_id": "dl-device-care"},
+    {"category": "clean_english", "query": "Swipe gestures go the wrong way after installing an app", "expected_catalog_id": "dl-navigation"},
+    {"category": "clean_english", "query": "The battery dies quickly", "expected_catalog_id": "dl-battery"},
+    {"category": "clean_english", "query": "My camera pictures are blurry", "expected_catalog_id": "dl-camera-reset"},
+    {"category": "clean_english", "query": "The screen keeps flickering", "expected_catalog_id": "dl-motion"},
+
+    {"category": "english_paraphrase", "query": "Ever since the new software came in, everything takes forever to open", "expected_catalog_id": "dl-device-care"},
+    {"category": "english_paraphrase", "query": "My Galaxy keeps freezing and hanging all the time", "expected_catalog_id": "dl-device-care"},
+    {"category": "english_paraphrase", "query": "Charge doesn't even last till lunch anymore", "expected_catalog_id": "dl-battery"},
+    {"category": "english_paraphrase", "query": "I go from 100 to 20 percent in two hours", "expected_catalog_id": "dl-battery"},
+    {"category": "english_paraphrase", "query": "Pictures come out fuzzy and out of focus", "expected_catalog_id": "dl-camera-reset"},
+    {"category": "english_paraphrase", "query": "The display keeps blinking on and off", "expected_catalog_id": "dl-motion"},
+    {"category": "english_paraphrase", "query": "Going back with a gesture opens the wrong thing since I added a new launcher", "expected_catalog_id": "dl-navigation"},
+    {"category": "english_paraphrase", "query": "Apps stutter and the whole phone is sluggish", "expected_catalog_id": "dl-device-care"},
+
+    {"category": "hinglish", "query": "update ke baad phone bahut atak raha hai", "expected_catalog_id": "dl-device-care"},
+    {"category": "hinglish", "query": "battery jaldi khatam ho jaati hai yaar", "expected_catalog_id": "dl-battery"},
+    {"category": "hinglish", "query": "camera se photo saaf nahi aa rahi, sab dhundla hai", "expected_catalog_id": "dl-camera-reset"},
+    {"category": "hinglish", "query": "screen baar baar timtima rahi hai", "expected_catalog_id": "dl-motion"},
+    {"category": "hinglish", "query": "naya app daalne ke baad swipe karne pe ulta chal raha hai", "expected_catalog_id": "dl-navigation"},
+
+    {"category": "tanglish", "query": "phone romba slow aagudhu after update", "expected_catalog_id": "dl-device-care"},
+    {"category": "tanglish", "query": "mobile romba hang aagudhu, app open panna time edukudhu", "expected_catalog_id": "dl-device-care"},
+    {"category": "tanglish", "query": "charge seekiram kammi aagiduthu, evening varaikum nikkala", "expected_catalog_id": "dl-battery"},
+    {"category": "tanglish", "query": "photo edutha blur ah varudhu, clear ah illa", "expected_catalog_id": "dl-camera-reset"},
+    {"category": "tanglish", "query": "screen adikkadi flicker aagudhu", "expected_catalog_id": "dl-motion"},
+    {"category": "tanglish", "query": "pudhu app install panna apram swipe panna thappa poguthu", "expected_catalog_id": "dl-navigation"},
+
+    {"category": "typos", "query": "phn is sooo laggy aftr updte", "expected_catalog_id": "dl-device-care"},
+    {"category": "typos", "query": "batery draning fast", "expected_catalog_id": "dl-battery"},
+    {"category": "typos", "query": "camra pics blury", "expected_catalog_id": "dl-camera-reset"},
+    {"category": "typos", "query": "scren flikering", "expected_catalog_id": "dl-motion"},
+
+    {"category": "out_of_scope", "query": "My toaster is singing", "expected_catalog_id": null},
+    {"category": "out_of_scope", "query": "How do I cook biryani", "expected_catalog_id": null},
+    {"category": "out_of_scope", "query": "wifi connect aagala", "expected_catalog_id": null},
+    {"category": "out_of_scope", "query": "my laptop keyboard is not typing", "expected_catalog_id": null},
+    {"category": "out_of_scope", "query": "call drop aagudhu network illa", "expected_catalog_id": null}
+  ]
+}
