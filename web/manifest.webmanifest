@@ -1,0 +1,10 @@
+{
+  "name": "Galaxy Care - Smart Guided Troubleshooting",
+  "short_name": "Galaxy Care",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f6f6f8",
+  "theme_color": "#f6f6f8",
+  "icons": [{"src": "/web/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable"}]
+}
