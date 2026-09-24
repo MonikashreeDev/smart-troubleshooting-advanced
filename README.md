@@ -44,6 +44,7 @@ deterministic validators. If validation fails, the engine shows nothing rather t
 
 **Experience layer**
 - One UI-styled PWA - manifest, service worker app shell, installable on Galaxy phones.
+- Send-to-Samsung handoff: when every validated fix is exhausted, the service-centre report becomes shareable - WhatsApp to Samsung India support (1800-5-726-7864), email to support.in@samsung.com, download as .txt, or copy. On-screen steps walk through the official Samsung Members > Error reports flow. Samsung has no public error-report API, so the handoff is document-based.
 
 ## Honest data note
 
