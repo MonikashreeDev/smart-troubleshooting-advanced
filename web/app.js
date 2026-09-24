@@ -50,6 +50,62 @@ function planCard(plan, opts = {}) {
     <p class="note"><b>Source:</b> ${esc(p.source_span)}</p><pre>${esc(JSON.stringify(p, null, 2))}</pre></details>${fb}`;
 }
 
+// ---------- service-centre handoff: send the report to Samsung ----------
+const SAMSUNG_WA = '91180057267864'; // Samsung India support on WhatsApp: 1800-5-726-7864
+const SAMSUNG_EMAIL = 'support.in@samsung.com';
+
+function reportText(rep) {
+  const L = ['GALAXY CARE - SERVICE REPORT',
+    'Smart Guided Troubleshooting (student demo - synthetic data, not an official Samsung app)', '',
+    'Complaint: ' + (rep.complaint || '-'),
+    'Symptom: ' + (rep.symptom || '-'),
+    'Mode: ' + (rep.mode === 'on_device' ? 'on-device rules' : 'cloud AI + validators'), '',
+    'Verified fixes already tried:'];
+  (rep.fixes_tried && rep.fixes_tried.length ? rep.fixes_tried : ['(none recorded)']).forEach((f, i) => L.push((i + 1) + '. ' + f));
+  L.push('', 'Result: every validated fix in the catalog for this symptom was tried without success.',
+    'Request: deeper diagnosis at a Samsung service centre.');
+  return L.join('\n');
+}
+
+function escalateCard(rep) {
+  const text = reportText(rep), enc = encodeURIComponent(text);
+  const wa = 'https://wa.me/' + SAMSUNG_WA + '?text=' + enc;
+  const mail = 'mailto:' + SAMSUNG_EMAIL + '?subject=' + encodeURIComponent('Galaxy service request - troubleshooting report') + '&body=' + enc;
+  return `<b>Time for a service centre.</b><p class="note">Every validated fix in the catalog for this problem was tried, so it stops here instead of guessing. Hand this report to Samsung:</p><pre>${esc(JSON.stringify(rep, null, 2))}</pre>
+    <div class="handoff"><h4>Send this report to Samsung</h4>
+    <div class="handoffBtns">
+      <a class="hsBtn primary" href="${wa}" target="_blank" rel="noopener">WhatsApp Samsung India support</a>
+      <a class="hsBtn" href="${mail}">Email Samsung support</a>
+      <button class="hsBtn" data-dl>Download report (.txt)</button>
+      <button class="hsBtn" data-copy>Copy report</button>
+    </div>
+    <details class="proof"><summary>Official route: Samsung Members app</summary>
+    <ol class="steps"><li>Long-press the <b>Samsung Members</b> app icon and tap <b>Error reports</b>.</li>
+    <li>Pick the category and describe the issue - paste this report and attach a screenshot.</li>
+    <li>Keep <b>Send system log data</b> ticked, then send.</li>
+    <li>Samsung's team replies in the app under <b>Check feedback you sent</b>.</li></ol>
+    <p class="note">Samsung India WhatsApp support (24/7): 1800-5-726-7864 · ${esc(SAMSUNG_EMAIL)}</p></details>
+    <div class="note handoffNote" hidden></div></div>`;
+}
+
+function wireHandoff(d, rep) {
+  const text = reportText(rep), note = d.querySelector('.handoffNote');
+  const flash = t => { note.textContent = t; note.hidden = false; };
+  const dl = d.querySelector('[data-dl]');
+  if (dl) dl.onclick = () => {
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([text], {type: 'text/plain'}));
+    a.download = 'galaxy-care-service-report.txt'; a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+    flash('Report downloaded. Attach it in Samsung Members or send it on WhatsApp / email.');
+  };
+  const cp = d.querySelector('[data-copy]');
+  if (cp) cp.onclick = async () => {
+    try { await navigator.clipboard.writeText(text); flash('Copied. Paste it into Samsung Members > Error reports, WhatsApp or email.'); }
+    catch { const ta = document.createElement('textarea'); ta.value = text; d.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); flash('Copied. Paste it into Samsung Members > Error reports, WhatsApp or email.'); }
+  };
+}
+
 function handle(r) {
   SID = r.session_id;
   if (r.type === 'question') {
@@ -59,7 +115,8 @@ function handle(r) {
     const d = add(planCard(r.plan, {session:true, step:r.step, size:r.ladder_size}), 'plan');
     d.querySelectorAll('[data-act]').forEach(b => b.onclick = () => { d.querySelectorAll('.fb button').forEach(x => x.disabled = true); user(b.textContent); turn({type:b.dataset.act}); });
   } else if (r.type === 'escalate') {
-    add(`<b>Time for a service centre.</b><p class="note">Every validated fix in the catalog for this problem was tried. Show this report:</p><pre>${esc(JSON.stringify(r.report, null, 2))}</pre>`, 'plan');
+    const d = add(escalateCard(r.report), 'plan');
+    wireHandoff(d, r.report);
     SID = null;
   } else if (r.type === 'closed') { bot('Great - closed. That fix now counts as a verified fix and ranks higher next time.'); SID = null; }
   else if (r.type === 'no_match') { bot(`I can't match that to a verified fix, so I won't guess (${String(r.reason || 'no_match').replace(/_/g, ' ')}).`); SID = null; }
